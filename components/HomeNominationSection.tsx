@@ -43,7 +43,7 @@ export default function HomeNominationSection() {
   return (
     <section className="bg-white pb-32 lg:pb-48 3xl:pb-68!">
       <FadeIn className="mx-auto max-w-6xl px-4 sm:px-6 3xl:max-w-375!">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-24 3xl:justify-items-center 3xl:gap-32!">
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-24 3xl:justify-items-center 3xl:gap-32!">
           <div className="lg:max-w-md 3xl:max-w-lg!">
             <div className="mb-6 leading-[1.1]">
               <h2 className="block text-[22px] md:text-2xl xl:text-[28px] 2xl:text-[32px] 3xl:text-[38px]!">

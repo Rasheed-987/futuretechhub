@@ -89,6 +89,7 @@ export default function ContactPage() {
               priority
             />
 
+        
 
             <div className="relative z-10 flex w-full flex-col items-center justify-between gap-12 p-4 md:p-4 lg:flex-row lg:items-start lg:gap-16">
               <div className="flex w-full flex-1 flex-col gap-4 md:gap-6">

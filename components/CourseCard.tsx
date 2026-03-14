@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
+import { useMemo } from "react";
 
 export type CourseItem = {
   id: string;
@@ -14,6 +15,7 @@ export type CourseItem = {
   action: string;
   link?: string;
   image: string;
+  videoSrc?: string;
   theme: string;
   actionDisabled?: boolean;
   note?: string;
@@ -36,6 +38,16 @@ export default function CourseCard({
 }: CourseCardProps) {
   const isGreenTheme = item.theme === "green";
   const bgColor = customBg ? "" : isGreenTheme ? "bg-[#E4F3EF]" : "bg-[#F7FAF9]";
+
+  const isExternal = useMemo(() => {
+    if (!item.videoSrc) return false;
+    return (
+      item.videoSrc.includes("vimeo.com") ||
+      item.videoSrc.includes("youtube.com") ||
+      item.videoSrc.includes("youtu.be")
+    );
+  }, [item.videoSrc]);
+
 
   return (
     <div
@@ -131,14 +143,49 @@ export default function CourseCard({
           </div>
         </div>
 
-        <div dir="ltr" className="relative mb-4 h-full min-h-[250px] w-full overflow-hidden rounded-2xl bg-gray-200 p-5 md:mb-0 md:min-h-[320px] md:rounded-xl lg:min-h-[400px] lg:w-1/2">
-          <Image
-            src={item.image}
-            alt={item.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
-            className={`object-cover object-center ${islast ? "sm:object-[center_30%] md:object-[center_20%] lg:object-center" : "sm:object-[center_40%] md:object-[center_40%] lg:object-[center_60%]"}`}
-          />
+        <div 
+          dir="ltr" 
+          className="relative mb-4 h-full min-h-[300px] w-full overflow-hidden rounded-2xl bg-black md:mb-0 md:min-h-[400px] md:rounded-xl lg:min-h-[500px] lg:w-1/2"
+        >
+          {/* Poster layer (background) */}
+          {item.image && (
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+              className={`object-cover object-center ${islast ? "sm:object-[center_30%] md:object-[center_20%] lg:object-center" : "sm:object-[center_40%] md:object-[center_40%] lg:object-[center_60%]"}`}
+            />
+          )}
+
+          {/* External Video layer */}
+          {item.videoSrc && isExternal && (
+            <div className="absolute inset-0 w-full h-full z-10 pointer-events-none overflow-hidden bg-black opacity-100">
+              <iframe
+                src={item.videoSrc}
+                title={item.title || "Video"}
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute border-0 pointer-events-none"
+                style={{ width: "160%", height: "160%", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
+              />
+            </div>
+          )}
+
+          {/* Native Video layer */}
+          {item.videoSrc && !isExternal && (
+            <video
+              src={item.videoSrc}
+              className="absolute inset-0 h-full w-full object-cover z-10 opacity-100"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+            />
+          )}
         </div>
       </div>
     </div>

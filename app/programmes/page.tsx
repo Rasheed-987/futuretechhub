@@ -32,7 +32,8 @@ const programs = {
       ],
       action: "Apply now",
       link: "/contact",
-      image: "/images/graphic1.png",
+      image: "",
+      videoSrc: "https://player.vimeo.com/video/1173578653?badge=0&autopause=0&player_id=0&app_id=58479&background=1&autoplay=1&loop=1&byline=0&title=0&portrait=0",
       theme: "white",
     },
     {
@@ -54,6 +55,7 @@ const programs = {
       action: "Apply now",
       link: "/contact",
       image: "",
+      videoSrc: "https://www.youtube.com/embed/2g811Eo7K8U?autoplay=1&mute=1&controls=0&loop=1&playlist=2g811Eo7K8U&rel=0&showinfo=0",
       theme: "green",
     },
     {
@@ -75,6 +77,7 @@ const programs = {
       action: "Apply now",
       link: "/contact",
       image: "",
+      videoSrc: "https://player.vimeo.com/video/1173578563?background=1&autoplay=1&loop=1&byline=0&title=0&portrait=0",
       theme: "green",
     },
   ] satisfies CourseItem[],
