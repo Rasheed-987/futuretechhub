@@ -31,13 +31,7 @@ export default function Footer() {
                 <div className="mb-4 flex flex-col-reverse gap-6 md:mb-8 md:flex-row md:gap-10">
                     <div className="flex max-w-sm flex-col items-start gap-6">
                         <Link href="/" className="inline-block transition-opacity hover:opacity-80">
-                            <Image
-                                src="/images/logo2.png"
-                                alt="FutureTech Logo"
-                                width={120}
-                                height={60}
-                                className="h-auto w-auto max-w-full"
-                            />
+                            <span className="text-xl font-bold text-brand-blue uppercase">FutureTech</span>
                         </Link>
 
                         <p className="max-w-[15rem] text-[14px] leading-[1.4] text-black/60 md:text-[15.8px] 3xl:max-w-80! 3xl:text-[20px]!">

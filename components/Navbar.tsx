@@ -451,7 +451,7 @@ export default function Navbar() {
                     onClick={() => window.location.href = '/'}
                     className="font-bold text-xl cursor-pointer text-brand-blue hover:opacity-80 transition-opacity whitespace-nowrap"
                 >
-                    Logo
+                    FutureTech
                 </div>
             </div>
 

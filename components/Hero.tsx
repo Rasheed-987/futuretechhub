@@ -32,7 +32,7 @@ export default function Hero({ title, description, backgroundImage, mobileBackgr
             {/* 1. Header & Description (Order 1 on mobile) */}
             <div className="order-1 md:absolute md:inset-0 md:z-20 flex items-end md:items-center pointer-events-none">
                 <div className="w-full max-w-5xl md:px-12 mt-10 md:mt-0 pb-6 md:pb-10 pointer-events-auto">
-                    <h1 className="text-[38px] mt-20 md:mt-0 md:text-5xl lg:text-[3.5rem] 2xl:text-[4.5rem] 3xl:text-[76px]! font-medium leading-[1] 2xl:leading-[1] text-zinc-900 md:text-white tracking-tight md:tracking-wider">
+                    <h1 className="text-[38px] mt-20 md:mt-0 md:text-5xl lg:text-[3.5rem] 2xl:text-[3.5rem] 3xl:text-[76px]! font-medium leading-[1] 2xl:leading-[1] text-zinc-900 md:text-white  tracking-wider">
                         <span className="">{title.prefix1}</span> <br />
                         <span className="">{title.prefix2}</span>
                         <span className="font-extrabold md:font-extrabold">{title.highlight} </span>
