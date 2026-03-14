@@ -12,7 +12,7 @@ const programs = [
       "Master the art of visual storytelling through our comprehensive graphic design course. We combine creative theory with technical mastery of industry tools to help you create compelling branding and digital assets.",
     hoverDescription:
       "Perfect for aspiring designers looking to master UI/UX, branding, and digital illustration using industry-standard tools.",
-    foregroundImage: "/images/graphic1.jpg",
+    backgroundImage: "/images/graphicdesigner1.jpg",
   },
   {
     tag: "FOR BEGINNERS AND OFFICE PROFESSIONALS",
@@ -21,7 +21,7 @@ const programs = [
       "Build a strong foundation in digital literacy with our essential computer skills program. Master core productivity software, operating systems, and internet safety to gain confidence in using modern business technology.",
     hoverDescription:
       "Ideal for beginners and office professionals aiming to enhance their productivity through essential computing and software mastery.",
-    foregroundImage: "",
+    backgroundImage: "/images/basiccomputer.jpg",
   },
   {
     tag: "FOR ASPIRING TECH PROFESSIONALS",
@@ -30,7 +30,7 @@ const programs = [
       "Transform into a full-stack developer through our immersive web technologies program. Learn modern coding languages and frameworks to build responsive, high-performance websites that meet today's industry demands.",
     hoverDescription:
       "Designed for tech enthusiasts wanting to build modern, responsive web applications using the latest frontend and backend frameworks.",
-    foregroundImage: "",
+    backgroundImage: "/images/webdeveloper1.jpg",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function HomeProgramsSection() {
               <InteractiveCourseCard
                 program={program}
                 isInteractive={true}
-                foregroundImage={program.foregroundImage}
+                backgroundImage={program.backgroundImage}
               />
             </FadeIn>
           ))}

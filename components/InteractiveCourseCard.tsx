@@ -12,7 +12,7 @@ type ProgramCardProps = {
     hoverDescription?: string;
   };
   isInteractive: boolean;
-  foregroundImage: string;
+  backgroundImage: string;
   labels?: {
     expand: string;
     close: string;
@@ -22,7 +22,7 @@ type ProgramCardProps = {
 export default function InteractiveCourseCard({
   program,
   isInteractive,
-  foregroundImage,
+  backgroundImage,
   labels = { expand: "Expand", close: "Close" },
 }: ProgramCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -30,26 +30,22 @@ export default function InteractiveCourseCard({
   return (
     <div className="group relative aspect-2/3 overflow-hidden rounded-3xl bg-brand-green md:rounded-4xl lg:aspect-3/4">
       <Image
-        src="/images/gb.webp"
+        src={backgroundImage}
         alt=""
         fill
-        className="object-cover"
+        className={`object-cover transition-transform duration-500 ease-out ${
+          isInteractive ? "group-hover:scale-105" : ""
+        }`}
       />
 
-      <div className="absolute inset-0 z-10">
-        <Image
-          src={foregroundImage}
-          alt={program.title}
-          fill
-          className={`pointer-events-none object-contain object-bottom-right transition-transform duration-500 ease-out ${
-            isInteractive ? "group-hover:scale-105" : ""
-          }`}
-        />
-      </div>
-
-      <div className="absolute inset-0 z-20 h-1/2" />
+      {/* Top Overlay Gradient */}
       <div
-        className={`absolute inset-0 z-20 bg-linear-to-t from-black/55 via-transparent transition-opacity duration-500 ${
+        className={`absolute inset-0 z-20 bg-linear-to-b from-black/50 via-transparent to-transparent`}
+      />
+
+      {/* Bottom Overlay Gradient */}
+      <div
+        className={`absolute inset-0 z-20 bg-linear-to-t from-black/60 via-transparent transition-opacity duration-500 ${
           isInteractive
             ? "opacity-100 lg:opacity-0 lg:group-hover:opacity-100"
             : "opacity-100"
