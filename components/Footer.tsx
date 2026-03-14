@@ -7,7 +7,7 @@ import Container from "@/components/Container";
 
 const footerDict = {
     nav: {
-        programmes: "Programmes",
+        programmes: "Courses",
         approach: "Approach",
         partnership: "Partnership",
         alumni: "Alumni",
@@ -17,9 +17,9 @@ const footerDict = {
     footer: {
         privacyPolicy: "Privacy Policy",
         termsOfService: "Terms of Service",
-        copyright: "© 2026 UAE Government Leaders Program. All rights reserved.",
+        copyright: "© 2026 FutureTech Institute. All rights reserved.",
         description:
-            "UAE Government Leaders Program - Empowering the next generation of Emirati leaders.",
+            "FutureTech Institute - Empowering the next generation of tech leaders through industry-led education.",
     },
 };
 
@@ -33,11 +33,11 @@ export default function Footer() {
                     <div className="flex max-w-sm flex-col items-start gap-6">
                         <Link href="/" className="inline-block transition-opacity hover:opacity-80">
                             <Image
-                                src="/images/logo2.png"
-                                alt="UGLP"
-                                width={100}
-                                height={60}
-                                className="h-auto w-auto max-w-full"
+                                src="/logo.png"
+                                alt="FutureTech Logo"
+                                width={270}
+                                height={100}
+                                className="h-19 w-auto object-contain"
                             />
                         </Link>
 

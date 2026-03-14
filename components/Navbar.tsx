@@ -431,13 +431,16 @@ export default function Navbar() {
         >
             {/* Logo */}
             <div className="flex md:flex-1 items-center">
-                {/* If user images aren't present this will throw a Next component error, we can catch or leave as is if user provided correct paths for their project */}
-                <div
-                    onClick={() => window.location.href = '/'}
-                    className="font-bold text-xl cursor-pointer text-brand-blue hover:opacity-80 transition-opacity whitespace-nowrap"
-                >
-                    FutureTech
-                </div>
+                <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+                    <Image
+                        src="/logo.png"
+                        alt="FutureTech Logo"
+                        width={270}
+                        height={90}
+                        className="h-16 w-auto object-contain"
+                        priority
+                    />
+                </Link>
             </div>
 
             {/* --- DESKTOP NAVIGATION LINKS (Centered) --- */}

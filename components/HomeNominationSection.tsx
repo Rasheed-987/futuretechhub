@@ -77,7 +77,7 @@ export default function HomeNominationSection() {
             </div>
           </div>
 
-          <div className="rounded-3xl bg-[#E6EFEA] p-6 md:p-10 3xl:max-w-182! 3xl:p-14!">
+          <div className="rounded-3xl bg-[#E6EFEA] item p-6 md:p-10 3xl:max-w-182! 3xl:p-14!">
             <NominationForm dict={nomination.form} />
           </div>
         </div>
