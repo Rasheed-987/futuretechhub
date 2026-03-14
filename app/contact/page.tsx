@@ -11,9 +11,9 @@ const contactPage = {
     },
     description:
       "Exploring our courses, seeking guidance, or interested in enrolling? We'd love to hear from you and help you get started.",
-    phone: "+97147771555",
-    email: "admissions@futuretech.ae",
-    address: "UAE, Dubai",
+    phone: "+92 333 5115133",
+    email: "admissions@futuretech.com",
+    address: "Islamabad, Pakistan",
   },
   form: {
     title: "Join the ",
@@ -179,7 +179,7 @@ export default function ContactPage() {
 
       <section className="bg-white pb-32">
         <div className="mx-auto max-w-6xl px-6 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-24">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-24">
             <div className="lg:max-w-md">
               <div className="mb-6 leading-[1.1]">
                 <h2 className="text-xl md:text-3xl">
@@ -211,7 +211,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-3xl bg-[#E6EFEA] p-6 md:p-10">
+            <div className="rounded-3xl bg-[#E6EFEA] items-center p-6 md:p-10">
               <NominationForm dict={nomination.form} />
             </div>
           </div>

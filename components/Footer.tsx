@@ -7,19 +7,18 @@ import Container from "@/components/Container";
 
 const footerDict = {
     nav: {
-        programmes: "Programmes",
-        approach: "Approach",
-        partnership: "Partnership",
-        alumni: "Alumni",
-        resources: "Resources",
+        home: "Home",
         about: "About",
+        courses: "Courses",
+        leadership: "Leadership Model",
+        contact: "Contact Us",
     },
     footer: {
         privacyPolicy: "Privacy Policy",
         termsOfService: "Terms of Service",
-        copyright: "© 2026 UAE Government Leaders Program. All rights reserved.",
+        copyright: "© 2026 FutureTech Institute. All rights reserved.",
         description:
-            "UAE Government Leaders Program - Empowering the next generation of Emirati leaders.",
+            "FutureTech Institute - Empowering the next generation of technology leaders through industry-led education.",
     },
 };
 
@@ -27,65 +26,59 @@ export default function Footer() {
     const pathname = usePathname();
 
     return (
-        <footer className="bg-white pt-6 pb-8">
+        <footer className="bg-white pb-8 pt-6">
             <Container className="px-4 lg:px-6">
                 <div className="mb-4 flex flex-col-reverse gap-6 md:mb-8 md:flex-row md:gap-10">
                     <div className="flex max-w-sm flex-col items-start gap-6">
                         <Link href="/" className="inline-block transition-opacity hover:opacity-80">
                             <Image
                                 src="/images/logo2.png"
-                                alt="UGLP"
-                                width={100}
+                                alt="FutureTech Logo"
+                                width={120}
                                 height={60}
                                 className="h-auto w-auto max-w-full"
                             />
                         </Link>
 
-                        <p className="max-w-[11.8rem] text-[14px] leading-[1.2] text-black/60 md:text-[15.8px] 2xl:max-w-[11.8rem] xl:max-w-[11.8rem] 3xl:max-w-60! 3xl:text-[20px]!">
+                        <p className="max-w-[15rem] text-[14px] leading-[1.4] text-black/60 md:text-[15.8px] 3xl:max-w-80! 3xl:text-[20px]!">
                             {footerDict.footer.description}
                         </p>
                     </div>
 
-                    <div className="mx-2 flex gap-x-15 md:ml-24 md:gap-x-20">
+                    <div className="mx-2 flex gap-x-15 md:ml-auto md:gap-x-20">
                         <div className="flex flex-col gap-3">
                             <Link
-                                href="/programmes"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/programmes" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                                href="/"
+                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
                             >
-                                {footerDict.nav.programmes}
-                            </Link>
-                            <Link
-                                href="/approach"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/approach" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
-                            >
-                                {footerDict.nav.approach}
-                            </Link>
-                            <Link
-                                href="/partnership"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/partnership" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
-                            >
-                                {footerDict.nav.partnership}
-                            </Link>
-                        </div>
-
-                        <div className="flex flex-col gap-3">
-                            <Link
-                                href="/alumni"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/alumni" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
-                            >
-                                {footerDict.nav.alumni}
-                            </Link>
-                            <Link
-                                href="/resources"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/resources" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
-                            >
-                                {footerDict.nav.resources}
+                                {footerDict.nav.home}
                             </Link>
                             <Link
                                 href="/about"
                                 className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/about" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
                             >
                                 {footerDict.nav.about}
+                            </Link>
+                            <Link
+                                href="/programmes"
+                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/programmes" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                            >
+                                {footerDict.nav.courses}
+                            </Link>
+                        </div>
+
+                        <div className="flex flex-col gap-3">
+                            <Link
+                                href="/leadership-model"
+                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/leadership-model" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                            >
+                                {footerDict.nav.leadership}
+                            </Link>
+                            <Link
+                                href="/contact"
+                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/contact" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                            >
+                                {footerDict.nav.contact}
                             </Link>
                         </div>
                     </div>
@@ -112,3 +105,4 @@ export default function Footer() {
         </footer>
     );
 }
+

@@ -21,7 +21,7 @@ const programs = [
       "Build a strong foundation in digital literacy with our essential computer skills program. Master core productivity software, operating systems, and internet safety to gain confidence in using modern business technology.",
     hoverDescription:
       "Ideal for beginners and office professionals aiming to enhance their productivity through essential computing and software mastery.",
-    foregroundImage: "/images/homecenter2.webp",
+    foregroundImage: "",
   },
   {
     tag: "FOR ASPIRING TECH PROFESSIONALS",
@@ -30,7 +30,7 @@ const programs = [
       "Transform into a full-stack developer through our immersive web technologies program. Learn modern coding languages and frameworks to build responsive, high-performance websites that meet today's industry demands.",
     hoverDescription:
       "Designed for tech enthusiasts wanting to build modern, responsive web applications using the latest frontend and backend frameworks.",
-    foregroundImage: "/images/homecenter3.webp",
+    foregroundImage: "",
   },
 ];
 

@@ -43,7 +43,7 @@ const ProgramDropdown = ({ textColor }: { textColor: string }) => {
 
             {open && (
                 <div
-                    className="absolute left-1/2 -translate-x-1/2 mt-2 w-[650px] bg-white border border-border rounded-2xl shadow-2xl z-50 p-5 transition-all duration-200 grid grid-cols-[1.4fr_1fr] gap-6"
+                    className="absolute left-1/2 -translate-x-1/2 mt-1 w-[650px] bg-white border border-border rounded-2xl shadow-2xl z-50 p-5 transition-all duration-200 grid grid-cols-[1.4fr_1fr] gap-6"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >

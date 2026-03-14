@@ -53,7 +53,7 @@ const programs = {
       ],
       action: "Apply now",
       link: "/contact",
-      image: "/images/pro2.webp",
+      image: "",
       theme: "green",
     },
     {
@@ -74,7 +74,7 @@ const programs = {
       ],
       action: "Apply now",
       link: "/contact",
-      image: "/images/pro3.webp",
+      image: "",
       theme: "green",
     },
   ] satisfies CourseItem[],
