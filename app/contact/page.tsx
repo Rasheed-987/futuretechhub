@@ -75,7 +75,7 @@ export default function ContactPage() {
         <Container className="px-4">
           <div className="relative flex w-full items-stretch overflow-hidden rounded-2xl bg-[#006251] landscape:aspect-[2.4/1] md:rounded-4xl lg:min-h-175">
             <Image
-              src="/images/contactbackground.webp"
+              src=""
               alt="Contact Background"
               fill
               className="hidden object-cover md:block"
@@ -91,7 +91,7 @@ export default function ContactPage() {
 
             <div className="pointer-events-none absolute bottom-0 -left-0.5 hidden h-[80%] w-[80%] md:-mb-4 md:-ml-8 lg:block">
               <Image
-                src=""
+                src="/images/contactmen.png"
                 alt="Contact Team"
                 fill
                 className="object-contain object-bottom-left"
@@ -101,7 +101,7 @@ export default function ContactPage() {
 
             <div className="pointer-events-none absolute bottom-[47%] left-[54%] block h-[75%] w-[110%] -translate-x-1/2 sm:hidden">
               <Image
-                src=""
+                src="/images/contactmen.png"
                 alt="Contact Team"
                 fill
                 className="object-contain object-bottom"
