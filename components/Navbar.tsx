@@ -8,7 +8,6 @@ import { stagger } from 'motion/react'
 import Image from 'next/image'
 import * as motion from 'motion/react-client'
 import HomeDropdown from './ui/HomeDropdown'
-import AboutDropdown from './ui/AboutDropdown'
 import { useDropdownHover } from '@/utils/utils'
 
 
@@ -327,20 +326,6 @@ const AnimatedLinkList = ({ closeMenu }: { closeMenu: () => void }) => {
                 </Link>
             </motion.li>
             {/* @ts-ignore */}
-            <motion.li
-                style={itemLinkStyle}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-            >
-                <Link
-                    href="/about"
-                    className={`${linkTextColor} font-semibold text-[25px] tracking-[0.5px] py-3 w-full text-center`}
-                    onClick={closeMenu}
-                >
-                    ABOUT
-                </Link>
-            </motion.li>
             {/* @ts-ignore */}
             <motion.li style={portfolioContainerStyle} variants={itemVariants}>
                 <button
@@ -458,7 +443,6 @@ export default function Navbar() {
             {/* --- DESKTOP NAVIGATION LINKS (Centered) --- */}
             <div className={`hidden md:flex flex-none items-center gap-7 ${textColor}`}>
                 <HomeDropdown textColor={textColor} />
-                <AboutDropdown textColor={textColor} />
 
                 <ProgramDropdown textColor={textColor} />
 

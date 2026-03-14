@@ -89,25 +89,6 @@ export default function ContactPage() {
               priority
             />
 
-            <div className="pointer-events-none absolute bottom-0 -left-0.5 hidden h-[80%] w-[80%] md:-mb-4 md:-ml-8 lg:block">
-              <Image
-                src="/contactmen.png"
-                alt="Contact Team"
-                fill
-                className="object-contain object-bottom-left"
-                priority
-              />
-            </div>
-
-            <div className="pointer-events-none absolute bottom-[47%] left-[54%] block h-[75%] w-[110%] -translate-x-1/2 sm:hidden">
-              <Image
-                src="/images/contactmen.png"
-                alt="Contact Team"
-                fill
-                className="object-contain object-bottom"
-                priority
-              />
-            </div>
 
             <div className="relative z-10 flex w-full flex-col items-center justify-between gap-12 p-4 md:p-4 lg:flex-row lg:items-start lg:gap-16">
               <div className="flex w-full flex-1 flex-col gap-4 md:gap-6">
