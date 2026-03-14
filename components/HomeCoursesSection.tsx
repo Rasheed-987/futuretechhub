@@ -12,7 +12,7 @@ const courses = [
       "Master the art of visual storytelling through our comprehensive graphic design course. We combine creative theory with technical mastery of industry tools to help you create compelling branding and digital assets.",
     hoverDescription:
       "Perfect for aspiring designers looking to master UI/UX, branding, and digital illustration using industry-standard tools.",
-    foregroundImage: "/images/homecenter1.webp",
+    backgroundImage: "/images/homecenter1.webp",
   },
   {
     tag: "FOR BEGINNERS AND OFFICE PROFESSIONALS",
@@ -21,7 +21,7 @@ const courses = [
       "Build a strong foundation in digital literacy with our essential computer skills course. Master core productivity software, operating systems, and internet safety to gain confidence in using modern business technology.",
     hoverDescription:
       "Ideal for beginners and office professionals aiming to enhance their productivity through essential computing and software mastery.",
-    foregroundImage: "/images/homecenter2.webp",
+    backgroundImage: "/images/homecenter2.webp",
   },
   {
     tag: "FOR ASPIRING TECH PROFESSIONALS",
@@ -30,7 +30,7 @@ const courses = [
       "Transform into a full-stack developer through our immersive web technologies course. Learn modern coding languages and frameworks to build responsive, high-performance websites that meet today's industry demands.",
     hoverDescription:
       "Designed for tech enthusiasts wanting to build modern, responsive web applications using the latest frontend and backend frameworks.",
-    foregroundImage: "/images/homecenter3.webp",
+    backgroundImage: "/images/homecenter3.webp",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function HomeCoursesSection() {
               <InteractiveCourseCard
                 program={course}
                 isInteractive={true}
-                foregroundImage={course.foregroundImage}
+                backgroundImage={course.backgroundImage}
               />
             </FadeIn>
           ))}
