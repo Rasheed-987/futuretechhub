@@ -91,7 +91,7 @@ export default function ContactPage() {
 
             <div className="pointer-events-none absolute bottom-0 -left-0.5 hidden h-[80%] w-[80%] md:-mb-4 md:-ml-8 lg:block">
               <Image
-                src="/images/contactmen.webp"
+                src=""
                 alt="Contact Team"
                 fill
                 className="object-contain object-bottom-left"
@@ -101,7 +101,7 @@ export default function ContactPage() {
 
             <div className="pointer-events-none absolute bottom-[47%] left-[54%] block h-[75%] w-[110%] -translate-x-1/2 sm:hidden">
               <Image
-                src="/images/contactmen.png"
+                src=""
                 alt="Contact Team"
                 fill
                 className="object-contain object-bottom"
