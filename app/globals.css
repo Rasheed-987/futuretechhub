@@ -3,18 +3,64 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Brand palette */
+  --blue: #045a86;
+  --green: #019977;
+  /* Brand gradient */
+  --brand-gradient: linear-gradient(90deg, var(--blue) 0%, var(--green) 100%);
+  /* Border colors */
+  --border-stroke: rgba(0, 0, 0, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  /* Map brand colors to Tailwind tokens */
+  --color-brand-blue: var(--blue);
+  --color-brand-green: var(--green);
+  --color-brand-gradient: var(--brand-gradient);
+  --color-brand-dark-blue: var(--blue);
+  /* Alias for backward compatibility/specific usage */
+  /* Border colors */
+  --color-border-stroke: var(--border-stroke);
+  /* Prefer Frutiger Arabic if available */
+  --font-sans: var(--font-frutiger-arabic);
   --font-mono: var(--font-geist-mono);
+  /* Custom breakpoints */
+  --breakpoint-3xl: 1700px;
+  --breakpoint-mb1: 410px;
+  --breakpoint-mb2: 450px;
+  --breakpoint-mb0: 310px
+}
+
+:root {
+  --topbar-height: 44px;
+}
+
+@media (min-width: 1536px) {
+    :root {
+      --topbar-height: 46px;
+    }
+}
+
+@media (min-width: 1700px) {
+  :root {
+    --topbar-height: 58px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 }
@@ -22,5 +68,175 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Prefer Frutiger LT Arabic if configured, fallback to Geist Sans */
+  font-family: var(--font-frutiger-arabic), Arial, Helvetica, sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .bg-brand-gradient {
+    background-image: linear-gradient(
+      90deg,
+      var(--blue) 0%,
+      var(--green) 51%,
+      var(--blue) 100%
+    );
+    background-size: 200% auto;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .bg-brand-gradient:hover {
+    background-position: right center;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #045a86 0%, #019977 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-textnew {
+  background: linear-gradient(90deg, #045a86 0%, #019977 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* left side more green */
+.gradient-text-green-dominant {
+  background: linear-gradient(90deg, #045a86 0%, #019977 20%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.group-hover-gradient-text,
+.hover-gradient-text {
+  background: linear-gradient(
+    90deg,
+    currentColor 0%,
+    currentColor 50%,
+    #045a86 50%,
+    #019977 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-gradient-text-green-dominant,
+.group-hover-gradient-text-green-dominant {
+  background: linear-gradient(
+    90deg,
+    currentColor 0%,
+    currentColor 50%,
+    #045a86 50%,
+    #019977 62.5%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-gradient-text:hover,
+.group:hover .group-hover-gradient-text,
+.hover-gradient-text-green-dominant:hover,
+.group:hover .group-hover-gradient-text-green-dominant {
+  background-position: 100% 0%;
+}
+
+.btn-hover-white {
+  transition: all 0.3s ease;
+}
+
+.btn-hover-white:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Slow spin animation for the globe */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 60s linear infinite;
+}
+
+/* --- Center Swapping Balls Loader --- */
+@keyframes position-swap {
+  0%,
+  100% {
+    transform: translate(24px, 0px);
+    z-index: 10;
+  }
+
+  33.33% {
+    transform: translate(0px, 48px);
+    z-index: 1;
+  }
+
+  66.66% {
+    transform: translate(48px, 48px);
+    z-index: 1;
+  }
+}
+
+@keyframes random-pulse {
+  0% {
+    transform: scale(0.6);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(0.6);
+  }
+}
+
+.animate-position-swap {
+  animation: position-swap 1.8s infinite ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.animate-random-pulse {
+  animation: random-pulse 1.5s infinite ease-in-out;
 }
