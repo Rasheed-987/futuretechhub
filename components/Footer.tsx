@@ -33,7 +33,7 @@ export default function Footer() {
                     <div className="flex max-w-sm flex-col items-start gap-6">
                         <Link href="/" className="inline-block transition-opacity hover:opacity-80">
                             <Image
-                                src="/logo.png"
+                                src="/images/logo.png"
                                 alt="FutureTech Logo"
                                 width={270}
                                 height={100}

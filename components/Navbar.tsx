@@ -427,13 +427,13 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`w-full h-[60px] bg-transparent flex items-center justify-between px-6 relative z-[100]`}
+            className={`w-full h-[63px] bg-transparent flex items-center justify-between px-1 relative z-[100]`}
         >
             {/* Logo */}
             <div className="flex md:flex-1 items-center">
                 <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
                     <Image
-                        src="/logo.png"
+                        src="/images/logo.png"
                         alt="FutureTech Logo"
                         width={270}
                         height={90}

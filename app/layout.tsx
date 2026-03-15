@@ -49,7 +49,7 @@ export default function RootLayout({
 
         <div
           className="relative transition-[padding] duration-500 ease-in-out"
-          style={{ paddingTop: 'calc(var(--topbar-height, 0) + 2px)' }}
+          style={{ paddingTop: 'calc(var(--topbar-height, 0) )' }}
         >
           <Container className="px-4">
             <main className="3xl:pt-1! min-h-screen">{children}</main>
