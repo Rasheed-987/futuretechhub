@@ -10,7 +10,7 @@ type ProgramsListClientProps = {
 export default function ProgramsListClient({ items }: ProgramsListClientProps) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const bgs = ["#F7FAF9", "#E6EFEA", "#D2E4DA"];
-
+// new comment
     return (
         <section ref={sectionRef} className="scroll-smooth bg-white px-4 pb-5 sm:pb-5 md:pb-8 xl:pb-9 2xl:pb-10">
             {items.map((item, index) => {
