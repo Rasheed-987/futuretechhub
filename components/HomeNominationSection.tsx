@@ -3,39 +3,39 @@ import FadeIn from "@/components/FadeIn";
 import NominationForm from "@/components/NominationForm";
 
 const nomination = {
-  title: "Know someone with the",
-  titleHighlight: "potential to lead?",
+  title: "Know someone who wants to",
+  titleHighlight: "Master the Future of Tech?",
   description:
-    "Provide your details along with the nominee's information, we'll reach out to them and let them know you recommended them.",
-  recommendTitle: "WHO CAN YOU RECOMMEND?",
+    "Recommend a friend or colleague for our specialized courses. We'll reach out to them with a personalized training consultation and help them start their digital journey.",
+  recommendTitle: "WHO SHOULD ENROLL?",
   recommendList: [
     {
       icon: "/images/icon1.png",
-      text: "Emirati professionals with a clear track record of initiative and impact",
+      text: "Aspiring professionals looking to start a high-impact career in technology and design",
     },
     {
       icon: "/images/icon2.png",
-      text: "Individuals working in government or private sector roles",
+      text: "Individuals seeking to master industry-standard tools and modern software frameworks",
     },
     {
       icon: "/images/icon3.png",
-      text: "Those who align with the values of the UAE Government Leadership Model",
+      text: "Those who want to build a competitive professional portfolio through project-based learning",
     },
   ],
   form: {
-    yourDetails: "YOUR DETAILS",
+    yourDetails: "JOIN THE WAITLIST",
     fullName: "Your full name",
-    organization: "Organization name",
+    organization: "Current Occupation",
     email: "Your email",
-    nomineeDetails: "NOMINEE'S DETAILS",
-    nomineeName: "Name of nominee",
-    nomineeOrg: "Nominee's organization",
-    nomineeEmail: "Nominee's Email",
-    reason: "Why are you recommending this individual?",
-    submit: "Submit",
-    submitting: "Submitting...",
-    successTitle: "Thank you for recommending",
-    successMessage: "They will be contacted by our team, with your recommendation noted",
+    nomineeDetails: "FRIEND'S DETAILS",
+    nomineeName: "Name of friend",
+    nomineeOrg: "Friend's occupation",
+    nomineeEmail: "Friend's Email",
+    reason: "What course would you recommend for them?",
+    submit: "Send Recommendation",
+    submitting: "Sending...",
+    successTitle: "Thank you for the recommendation!",
+    successMessage: "We will contact them shortly with details about our upcoming batches.",
   },
 };
 

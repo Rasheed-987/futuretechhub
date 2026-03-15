@@ -7,12 +7,13 @@ import Container from "@/components/Container";
 
 const footerDict = {
     nav: {
-        programmes: "Courses",
-        approach: "Approach",
-        partnership: "Partnership",
-        alumni: "Alumni",
-        resources: "Resources",
-        about: "About",
+        home: "Home",
+        courses: "Courses",
+        leadership: "Leadership Model",
+        contact: "Contact Us",
+        graphic: "Graphic Designing",
+        computer: "Basic Computer",
+        web: "Web Development",
     },
     footer: {
         privacyPolicy: "Privacy Policy",
@@ -46,46 +47,52 @@ export default function Footer() {
                         </p>
                     </div>
 
-                    <div className="mx-2 flex gap-x-15 md:ml-24 md:gap-x-20">
+                    <div className="mx-2 flex gap-x-15 md:ml-32 md:gap-x-24">
                         <div className="flex flex-col gap-3">
                             <Link
+                                href="/"
+                                className={`text-[15px] font-bold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                            >
+                                {footerDict.nav.home}
+                            </Link>
+                            <Link
                                 href="/programmes"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/programmes" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                                className={`text-[15px] font-bold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/programmes" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
                             >
-                                {footerDict.nav.programmes}
+                                {footerDict.nav.courses}
                             </Link>
                             <Link
-                                href="/approach"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/approach" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                                href="/leadership-model"
+                                className={`text-[15px] font-bold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/leadership-model" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
                             >
-                                {footerDict.nav.approach}
+                                {footerDict.nav.leadership}
                             </Link>
                             <Link
-                                href="/partnership"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/partnership" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                                href="/contact"
+                                className={`text-[15px] font-bold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/contact" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
                             >
-                                {footerDict.nav.partnership}
+                                {footerDict.nav.contact}
                             </Link>
                         </div>
 
                         <div className="flex flex-col gap-3">
                             <Link
-                                href="/alumni"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/alumni" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                                href="/programmes#graphic-design"
+                                className="text-[14px] font-medium text-black/60 transition-colors hover:text-brand-blue 3xl:text-[18px]!"
                             >
-                                {footerDict.nav.alumni}
+                                {footerDict.nav.graphic}
                             </Link>
                             <Link
-                                href="/resources"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/resources" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                                href="/programmes#basic-computer"
+                                className="text-[14px] font-medium text-black/60 transition-colors hover:text-brand-blue 3xl:text-[18px]!"
                             >
-                                {footerDict.nav.resources}
+                                {footerDict.nav.computer}
                             </Link>
                             <Link
-                                href="/about"
-                                className={`text-[15px] font-semibold transition-colors md:text-[15px] 3xl:text-[20px]! ${pathname === "/about" ? "gradient-text" : "text-black hover:text-brand-blue"}`}
+                                href="/programmes#web-development"
+                                className="text-[14px] font-medium text-black/60 transition-colors hover:text-brand-blue 3xl:text-[18px]!"
                             >
-                                {footerDict.nav.about}
+                                {footerDict.nav.web}
                             </Link>
                         </div>
                     </div>

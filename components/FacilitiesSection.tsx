@@ -2,39 +2,39 @@
 
 import React from "react";
 import Image from "next/image";
-import { Play, GraduationCap, BookOpen, FileBadge, UserCheck, Award } from "lucide-react";
+import { Play, Monitor, Wifi, FileBadge, UserCheck, Award, Laptop } from "lucide-react";
 
 export default function FacilitiesSection() {
     const facilities = [
         {
-            Icon: GraduationCap,
-            title: "Alumni Support",
+            Icon: Monitor,
+            title: "Modern Computer Lab",
             description:
-                "Proin egestas odio sit amet leo aliquam rhoe. Aenean purus mauris, aliquet quis urna vitae,",
+                "Our labs are equipped with high-performance workstations optimized for coding, graphic design, and advanced software development.",
         },
         {
-            Icon: BookOpen,
-            title: "Books & Library",
+            Icon: Wifi,
+            title: "High-Speed WiFi",
             description:
-                "Proin egestas odio sit amet leo aliquam rhoe. Aenean purus mauris, aliquet quis urna vitae,",
-        },
-        {
-            Icon: FileBadge,
-            title: "Global Certificate",
-            description:
-                "Proin egestas odio sit amet leo aliquam rhoe. Aenean purus mauris, aliquet quis urna vitae,",
+                "Enjoy seamless campus-wide high-speed internet access to support your research, online learning, and real-time collaboration.",
         },
         {
             Icon: UserCheck,
-            title: "Talented Teacher",
+            title: "Industry Qualified Tutors",
             description:
-                "Proin egestas odio sit amet leo aliquam rhoe. Aenean purus mauris, aliquet quis urna vitae,",
+                "Learn directly from certified professionals and experts with extensive real-world experience in the global tech industry.",
         },
         {
-            Icon: Award,
-            title: "Scholarship Facility",
+            Icon: FileBadge,
+            title: "Global Certification",
             description:
-                "Proin egestas odio sit amet leo aliquam rhoe. Aenean purus mauris, aliquet quis urna vitae,",
+                "Earn internationally recognized certifications that validate your skills and significantly enhance your career prospects worldwide.",
+        },
+        {
+            Icon: Laptop,
+            title: "Hands-on Projects",
+            description:
+                "Apply your knowledge to real-world scenarios through industrial projects that help you build a professional portfolio.",
         },
     ];
 
@@ -61,31 +61,31 @@ export default function FacilitiesSection() {
 
             {/* Right side with facilities */}
             <div
-                className="md:w-1/2 p-10 md:p-16 lg:p-24 flex flex-col justify-center"
+                className="md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center"
                 style={{ backgroundColor: "#E6EFEA" }}
             >
-                <h2 className="text-4xl md:text-[50px] font-bold mb-14 text-gray-900 leading-tight">
+                <h2 className="text-3xl md:text-[40px] font-bold mb-10 text-gray-900 leading-tight">
                     Our Facilities
                 </h2>
-
-                <div className="space-y-10">
+ 
+                <div className="space-y-8">
                     {facilities.map((facility, index) => {
                         const IconComponent = facility.Icon;
                         return (
-                            <div key={index} className="flex gap-6 items-start">
+                            <div key={index} className="flex gap-5 items-start">
                                 <div className="flex-shrink-0 mt-1">
                                     <div 
-                                        className="w-[60px] h-[60px] rounded-full flex items-center justify-center shadow-md"
+                                        className="w-[50px] h-[50px] rounded-full flex items-center justify-center shadow-md"
                                         style={{ backgroundColor: bgColors[index % bgColors.length] }}
                                     >
-                                        <IconComponent className={`w-6 h-6 ${iconColors[index % iconColors.length]}`} />
+                                        <IconComponent className={`w-5 h-5 ${iconColors[index % iconColors.length]}`} />
                                     </div>
                                 </div>
                                 <div className="flex-1">
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2">
                                         {facility.title}
                                     </h3>
-                                    <p className="text-gray-600 text-[17px] leading-relaxed font-medium">
+                                    <p className="text-gray-600 text-[15px] leading-relaxed font-medium">
                                         {facility.description}
                                     </p>
                                 </div>

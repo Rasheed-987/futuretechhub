@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 export type CourseItem = {
   id: string;
@@ -47,6 +47,8 @@ export default function CourseCard({
       item.videoSrc.includes("youtu.be")
     );
   }, [item.videoSrc]);
+
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
 
   return (
@@ -160,13 +162,14 @@ export default function CourseCard({
 
           {/* External Video layer */}
           {item.videoSrc && isExternal && (
-            <div className="absolute inset-0 w-full h-full z-10 pointer-events-none overflow-hidden bg-black opacity-100">
+            <div className={`absolute inset-0 w-full h-full z-10 pointer-events-none overflow-hidden bg-black transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}>
               <iframe
                 src={item.videoSrc}
                 title={item.title || "Video"}
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
                 loading="lazy"
+                onLoad={() => setIsVideoLoaded(true)}
                 referrerPolicy="no-referrer-when-downgrade"
                 className="absolute border-0 pointer-events-none"
                 style={{ width: "160%", height: "160%", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
@@ -178,12 +181,13 @@ export default function CourseCard({
           {item.videoSrc && !isExternal && (
             <video
               src={item.videoSrc}
-              className="absolute inset-0 h-full w-full object-cover z-10 opacity-100"
+              className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
               autoPlay
               loop
+              onCanPlay={() => setIsVideoLoaded(true)}
               muted
               playsInline
-              preload="metadata"
+              preload="auto"
             />
           )}
         </div>
