@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "FutureTech Institute",
   description: "Empowering the next generation of technology leaders through industry-led education.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
