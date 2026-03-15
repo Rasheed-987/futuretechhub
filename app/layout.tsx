@@ -5,6 +5,7 @@ import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import Container from "../components/Container";
 import Footer from "../components/Footer";
+import StickyContact from "../components/StickyContact";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,6 +62,7 @@ export default function RootLayout({
           <div className="relative z-50 bg-white transition-all duration-500 ease-in-out mt-10">
             <Footer />
           </div>
+          <StickyContact />
         </div>
       </body>
     </html>
