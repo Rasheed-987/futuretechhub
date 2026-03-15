@@ -12,8 +12,10 @@ export default function Home() {
       highlight: "Future",
       suffix: "of Tech",
     },
+    
     description: "Discover innovative solutions that transform your business and elevate your digital presence to new heights.",
-    backgroundImage: "/image1.png",
+    mobileBackgroundImage: "/image1.png",
+    backgroundImage: "/images/heroimage.jpeg",
     buttons: {
       primary: {
         text: "Get Started",
