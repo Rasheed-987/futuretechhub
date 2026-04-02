@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
@@ -7,14 +7,30 @@ import Container from "../components/Container";
 import Footer from "../components/Footer";
 import StickyContact from "../components/StickyContact";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const frutiger = localFont({
+  src: [
+    {
+      path: "../public/fonts/FrutigerLTArabic45Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/FrutigerLTArabic55Roman.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/FrutigerLTArabic65Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/frutigerltarabic75black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-frutiger",
 });
 
 export const metadata: Metadata = {
@@ -33,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${frutiger.variable} font-sans antialiased`}
       >
         <div className="absolute top-0 left-0 right-0 z-[100] w-full transition-all duration-500 ease-in-out">
           <div

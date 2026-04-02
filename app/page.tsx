@@ -7,8 +7,8 @@ import HomeNominationSection from "@/components/HomeNominationSection";
 export default function Home() {
   const heroData = {
     title: {
-      prefix1: "Welcome to",
-      prefix2: "the",
+      prefix1: "Welcome to the",
+      prefix2: "",
       highlight: "Future",
       suffix: "of Tech",
     },

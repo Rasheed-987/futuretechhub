@@ -389,6 +389,21 @@ const AnimatedLinkList = ({ closeMenu }: { closeMenu: () => void }) => {
                 whileTap={{ scale: 0.95 }}
             >
                 <Link
+                    href="/about"
+                    className={`${linkTextColor} font-semibold text-[25px] tracking-[0.5px] py-3 w-full text-center`}
+                    onClick={closeMenu}
+                >
+                    ABOUT
+                </Link>
+            </motion.li>
+            {/* @ts-ignore */}
+            <motion.li
+                style={itemLinkStyle}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+            >
+                <Link
                     href="/contact"
                     className={`${linkTextColor} font-semibold text-[25px] tracking-[0.5px] py-3 w-full text-center`}
                     onClick={closeMenu}
@@ -455,6 +470,13 @@ export default function Navbar() {
                     className={`font-semibold text-[14px] tracking-[0.5px] hover-gradient-text transition-all ${textColor}`}
                 >
                     LEADERSHIP MODEL
+                </Link>
+
+                <Link
+                    href="/about"
+                    className={`font-semibold text-[14px] tracking-[0.5px] uppercase hover-gradient-text transition-all ${textColor}`}
+                >
+                    ABOUT
                 </Link>
 
                 <Link

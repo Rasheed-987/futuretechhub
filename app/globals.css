@@ -33,8 +33,7 @@ html {
   /* Border colors */
   --color-border-stroke: var(--border-stroke);
   /* Prefer Frutiger Arabic if available */
-  --font-sans: var(--font-frutiger-arabic);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-frutiger), "sans-serif";
   /* Custom breakpoints */
   --breakpoint-3xl: 1700px;
   --breakpoint-mb1: 410px;
@@ -68,8 +67,8 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  /* Prefer Frutiger LT Arabic if configured, fallback to Geist Sans */
-  font-family: var(--font-frutiger-arabic), Arial, Helvetica, sans-serif;
+  /* Use local Frutiger font globally */
+  font-family: var(--font-frutiger), "sans-serif";
 }
 
 @keyframes fadeIn {

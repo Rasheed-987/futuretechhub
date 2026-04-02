@@ -35,8 +35,8 @@ export default function Hero({ title, description, backgroundImage, mobileBackgr
                     <h1 className="text-[38px] mt-20 md:mt-0 md:text-5xl lg:text-[3.5rem] 2xl:text-[3.5rem] 3xl:text-[76px]! font-medium leading-[1] 2xl:leading-[1] text-zinc-900   tracking-wider">
                         <span className="">{title.prefix1}</span> <br />
                         <span className="">{title.prefix2}</span>
-                        <span className="font-extrabold md:font-extrabold">{title.highlight} </span>
-                        <span className="block ">{title.suffix} </span>
+                        <span className="font-extrabold md:font-extrabold">{title.highlight} </span>  <span className="">{title.suffix} </span>
+                       
                     </h1>
                     <p className="mt-4 text-black/60 md:text-white/90 text-base  lg:text-[16px] xl:text-[17px] 2xl:text-xl 2xl:mt-4  lg:max-w-[450px] xl:max-w-[500px] 2xl:max-w-[670px]  tracking-wide 2xl:tracking-widest leading-[1.3]">
                         {description}

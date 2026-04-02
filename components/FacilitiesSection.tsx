@@ -42,21 +42,16 @@ export default function FacilitiesSection() {
     const iconColors = ["text-white", "text-white", "text-[#019977]", "text-[#045A86]", "text-white"];
 
     return (
-        <section className="flex flex-col md:flex-row w-full">
+        <section className="flex flex-col mb-12 md:flex-row w-full"> 
             {/* Left side with image */}
-            <div className="md:w-1/2 relative min-h-[400px] md:min-h-[auto] w-full">
+            <div className="md:w-1/2 relative min-h-[350px] md:min-h-[auto] w-full">
                 <Image
                     src="/image1.png"
                     alt="Library"
                     fill
                     className="object-cover"
                 />
-                {/* Play button overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <button className="bg-[#FFB606] h-20 w-20 rounded-full flex items-center justify-center transition-transform hover:scale-105 shadow-xl text-white">
-                        <Play className="w-8 h-8 ml-1" fill="currentColor" />
-                    </button>
-                </div>
+               
             </div>
 
             {/* Right side with facilities */}
