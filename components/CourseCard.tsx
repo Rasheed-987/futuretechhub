@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export type CourseItem = {
   id: string;
@@ -48,7 +48,73 @@ export default function CourseCard({
     );
   }, [item.videoSrc]);
 
+  const isVimeo = useMemo(() => {
+    if (!item.videoSrc) return false;
+    return item.videoSrc.includes("vimeo.com");
+  }, [item.videoSrc]);
+
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+
+  useEffect(() => {
+    setIsVideoLoaded(false);
+  }, [item.videoSrc]);
+
+  useEffect(() => {
+    if (!item.videoSrc || !isExternal || !isVimeo) return;
+
+    let cancelled = false;
+    let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+    let cleanup: (() => void) | null = null;
+
+    const setupVimeoPlaybackListener = async () => {
+      try {
+        const { default: VimeoPlayer } = await import("@vimeo/player");
+
+        if (cancelled || !iframeRef.current) return;
+
+        const player = new VimeoPlayer(iframeRef.current);
+
+        const revealVideo = () => {
+          if (cancelled) return;
+          setIsVideoLoaded(true);
+          if (fallbackTimer) {
+            clearTimeout(fallbackTimer);
+            fallbackTimer = null;
+          }
+        };
+
+        player.on("play", revealVideo);
+        player.on("playing", revealVideo);
+
+        // Fallback for browsers where autoplay might be delayed.
+        fallbackTimer = setTimeout(revealVideo, 3000);
+
+        cleanup = () => {
+          if (fallbackTimer) {
+            clearTimeout(fallbackTimer);
+            fallbackTimer = null;
+          }
+          player.off("play", revealVideo);
+          player.off("playing", revealVideo);
+          void player.destroy();
+        };
+      } catch {
+        // If Vimeo API fails, fall back to iframe load behavior.
+        setIsVideoLoaded(true);
+      }
+    };
+
+    void setupVimeoPlaybackListener();
+
+    return () => {
+      cancelled = true;
+      if (fallbackTimer) {
+        clearTimeout(fallbackTimer);
+      }
+      cleanup?.();
+    };
+  }, [isExternal, isVimeo, item.videoSrc]);
 
 
   return (
@@ -147,7 +213,7 @@ export default function CourseCard({
 
         <div 
           dir="ltr" 
-          className="relative mb-4 h-full min-h-[300px] w-full overflow-hidden rounded-2xl bg-black md:mb-0 md:min-h-[400px] md:rounded-xl lg:min-h-[500px] lg:w-1/2"
+          className="relative mb-4 h-full min-h-[300px] w-full overflow-hidden rounded-2xl bg-[#E5ECE9] md:mb-0 md:min-h-[400px] md:rounded-xl lg:min-h-[500px] lg:w-1/2"
         >
           {/* Poster layer (background) */}
           {item.image && (
@@ -162,14 +228,19 @@ export default function CourseCard({
 
           {/* External Video layer */}
           {item.videoSrc && isExternal && (
-            <div className={`absolute inset-0 w-full h-full z-10 pointer-events-none overflow-hidden bg-black transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`absolute inset-0 z-10 h-full w-full overflow-hidden transition-opacity duration-1000 pointer-events-none ${isVideoLoaded ? "opacity-100" : "opacity-0"}`}>
               <iframe
+                ref={iframeRef}
                 src={item.videoSrc}
                 title={item.title || "Video"}
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
-                loading="lazy"
-                onLoad={() => setIsVideoLoaded(true)}
+                loading="eager"
+                onLoad={() => {
+                  if (!isVimeo) {
+                    setIsVideoLoaded(true);
+                  }
+                }}
                 referrerPolicy="no-referrer-when-downgrade"
                 className="absolute border-0 pointer-events-none"
                 style={{ width: "160%", height: "160%", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}

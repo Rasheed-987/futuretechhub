@@ -33,7 +33,7 @@ const programs = {
       action: "Apply now",
       link: "/contact",
       image: "/images/graphicdesigner1.jpg",
-      videoSrc: "https://player.vimeo.com/video/1173578653?badge=0&autopause=0&player_id=0&app_id=58479&background=1&autoplay=1&loop=1&byline=0&title=0&portrait=0",
+      videoSrc: "https://player.vimeo.com/video/1173578653?badge=0&autopause=0&player_id=0&app_id=58479&background=1&autoplay=1&loop=1&muted=1&playsinline=1&byline=0&title=0&portrait=0",
       theme: "white",
     },
     {
@@ -55,7 +55,7 @@ const programs = {
       action: "Apply now",
       link: "/contact",
       image: "/images/basiccomputer.jpg",
-      videoSrc: "https://player.vimeo.com/video/1173693745?badge=0&autopause=0&player_id=0&app_id=58479&background=1&autoplay=1&loop=1&byline=0&title=0&portrait=0",
+      videoSrc: "https://player.vimeo.com/video/1173693745?badge=0&autopause=0&player_id=0&app_id=58479&background=1&autoplay=1&loop=1&muted=1&playsinline=1&byline=0&title=0&portrait=0",
       theme: "white",
     },
     {
@@ -77,7 +77,7 @@ const programs = {
       action: "Apply now",
       link: "/contact",
       image: "/images/webdeveloper1.jpg",
-      videoSrc: "https://player.vimeo.com/video/1173578563?background=1&autoplay=1&loop=1&byline=0&title=0&portrait=0",
+      videoSrc: "https://player.vimeo.com/video/1173578563?background=1&autoplay=1&loop=1&muted=1&playsinline=1&byline=0&title=0&portrait=0",
       theme: "green",
     },
   ] satisfies CourseItem[],
