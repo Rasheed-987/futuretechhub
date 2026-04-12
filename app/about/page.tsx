@@ -1,9 +1,27 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/Container";
 import TagPill from "@/components/TagPill";
 import FadeIn from "@/components/FadeIn";
 import ContactSection from "@/components/ContactSection";
 import OurTeamCard from "@/components/OurTeamCard";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "About FutureTech Institute",
+  description:
+    "Learn how FutureTech Institute builds future-ready talent through practical, industry-aligned programmes, expert trainers, and real-world learning outcomes.",
+  path: "/about",
+  image: "/about.jpeg",
+  keywords: [
+    "about FutureTech Institute",
+    "technology training institute",
+    "industry aligned curriculum",
+    "career development training",
+    "future-ready workforce",
+    "professional upskilling",
+  ],
+});
 
 const teamMembers = [
   {

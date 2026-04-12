@@ -1,9 +1,25 @@
+import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import type { StaticImageData } from "next/image";
 import Container from "@/components/Container";
-import Button from "@/components/Button";
 import GLMContent from "@/components/GLMContent";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "FutureTech Excellence Model (FEM)",
+  description:
+    "Discover the FutureTech Excellence Model (FEM), our framework for practical empowerment, modern technical mastery, and measurable career impact.",
+  path: "/leadership-model",
+  image: "/images/leadership-model/earth.png",
+  keywords: [
+    "FutureTech Excellence Model",
+    "FEM framework",
+    "technology leadership model",
+    "practical tech learning",
+    "industry readiness training",
+    "continuous upskilling",
+  ],
+});
 
 type GLMItem = {
   title: string;

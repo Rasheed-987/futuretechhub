@@ -1,9 +1,27 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import ContactSection from "@/components/ContactSection";
 import TagPill from "@/components/TagPill";
 import ProgramsListClient from "@/app/programmes/ProgramsListClient";
 import ProgramsListSkeleton from "@/app/programmes/ProgramsListSkeleton";
 import type { CourseItem } from "@/components/CourseCard";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Programmes in Graphic Design, Computer, and Web Development",
+  description:
+    "Explore FutureTech programmes designed for practical outcomes, including Graphic Designing, Basic Computer, and Web Development tracks tailored to industry needs.",
+  path: "/programmes",
+  image: "/images/webdeveloper1.jpg",
+  keywords: [
+    "FutureTech programmes",
+    "graphic designing course",
+    "basic computer course",
+    "web development programme",
+    "technology certification courses",
+    "job-ready tech skills",
+  ],
+});
 
 const programs = {
   hero: {

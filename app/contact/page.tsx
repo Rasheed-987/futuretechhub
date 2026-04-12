@@ -1,7 +1,24 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
 import NominationForm from "@/components/NominationForm";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Contact FutureTech Institute",
+  description:
+    "Get in touch with FutureTech Institute for admissions, programme guidance, and enrollment support. Contact our team to begin your tech learning journey.",
+  path: "/contact",
+  image: "/images/contactbackground.webp",
+  keywords: [
+    "contact FutureTech Institute",
+    "admissions support",
+    "tech course inquiry",
+    "enrollment guidance",
+    "Islamabad training institute contact",
+  ],
+});
 
 const contactPage = {
   hero: {
