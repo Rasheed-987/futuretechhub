@@ -9,6 +9,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/courses',
+        destination: '/programmes',
+        permanent: true,
+      },
+      {
+        source: '/courses/:path*',
+        destination: '/programmes',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -32,6 +32,7 @@ export default function NominationForm({ dict }: NominationFormProps) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const validate = () => {
     const nextErrors: Record<string, string> = {};
@@ -58,10 +59,30 @@ export default function NominationForm({ dict }: NominationFormProps) {
       return;
     }
 
+    setSubmitError("");
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+
+    try {
+      const response = await fetch("/api/nomination", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = (await response.json().catch(() => null)) as { message?: string } | null;
+
+      if (!response.ok) {
+        throw new Error(data?.message ?? "Unable to send your request right now.");
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -74,6 +95,10 @@ export default function NominationForm({ dict }: NominationFormProps) {
         delete nextErrors[name];
         return nextErrors;
       });
+    }
+
+    if (submitError) {
+      setSubmitError("");
     }
   };
 
@@ -153,6 +178,8 @@ export default function NominationForm({ dict }: NominationFormProps) {
           {errors.reason && <p className="ml-2 mt-1 text-xs text-red-500">{errors.reason}</p>}
         </div>
       </div>
+
+      {submitError && <p className="text-center text-sm text-red-500">{submitError}</p>}
 
 
       <Button className="w-full rounded-full py-4 text-sm tracking-widest capitalize" disabled={isSubmitting}>

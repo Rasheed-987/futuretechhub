@@ -85,7 +85,7 @@ const about = {
       { value: "45+", label: "Industry collaborations" },
     ],
     description:
-      "From foundational courses to advanced professional tracks, FutureTech supports learners and organizations in building practical skills that create measurable results.",
+      "From foundational programmes to advanced professional tracks, FutureTech supports learners and organizations in building practical skills that create measurable results.",
   },
   missionVision: {
     mission: {

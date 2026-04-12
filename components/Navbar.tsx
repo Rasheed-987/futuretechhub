@@ -343,21 +343,21 @@ const AnimatedLinkList = ({ closeMenu }: { closeMenu: () => void }) => {
                         exit={{ opacity: 0, height: 0 }}
                     >
                         <Link
-                            href="/courses#graphic-design"
+                            href="/programmes#graphic-design"
                             className={`${linkTextColor} text-[20px] font-medium py-2`}
                             onClick={closeMenu}
                         >
                             Graphic Designing
                         </Link>
                         <Link
-                            href="/courses#basic-computer"
+                            href="/programmes#basic-computer"
                             className={`${linkTextColor} text-[20px] font-medium py-2`}
                             onClick={closeMenu}
                         >
                             Basic Computer
                         </Link>
                         <Link
-                            href="/courses#web-development"
+                            href="/programmes#web-development"
                             className={`${linkTextColor} text-[20px] font-medium py-2`}
                             onClick={closeMenu}
                         >

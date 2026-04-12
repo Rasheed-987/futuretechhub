@@ -19,6 +19,8 @@ export type CourseItem = {
   theme: string;
   actionDisabled?: boolean;
   note?: string;
+  courseContentPdf?: string;
+  courseContentButtonText?: string;
 };
 
 type CourseCardProps = {
@@ -190,21 +192,34 @@ export default function CourseCard({
             {item.link ? (
               item.link.startsWith("http") ? (
                 <a href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full">
-                  <Button disabled={item.actionDisabled} islast={islast} className="w-full">
+                  <Button disabled={item.actionDisabled} islast className="w-full">
                     {item.action}
                   </Button>
                 </a>
               ) : (
                 <Link href={item.link} className="block w-full">
-                  <Button disabled={item.actionDisabled} islast={islast} className="w-full">
+                  <Button disabled={item.actionDisabled} islast className="w-full">
                     {item.action}
                   </Button>
                 </Link>
               )
             ) : (
-              <Button islast={islast} className="w-full">
+              <Button islast className="w-full">
                 {item.action}
               </Button>
+            )}
+
+            {item.courseContentPdf && (
+              <a
+                href={item.courseContentPdf}
+                download
+                className="mt-2.5 block w-full"
+                aria-label={`${item.title} course content PDF`}
+              >
+                <Button className="w-full border border-[#045A86]/30 bg-[#045A86]! text-white! hover:bg-[#034B70]!">
+                  {item.courseContentButtonText ?? "Download course content"}
+                </Button>
+              </a>
             )}
 
             {item.note && <p className="mt-2.5 text-center text-xs text-[#00000099]">{item.note}</p>}
@@ -213,7 +228,7 @@ export default function CourseCard({
 
         <div 
           dir="ltr" 
-          className="relative mb-4 h-full min-h-[300px] w-full overflow-hidden rounded-2xl bg-[#E5ECE9] md:mb-0 md:min-h-[400px] md:rounded-xl lg:min-h-[500px] lg:w-1/2"
+          className="relative mb-4 h-full min-h-[300px] w-full overflow-hidden rounded-2xl bg-[#E5ECE9] md:mb-0 md:min-h-[400px] md:rounded-xl lg:min-h-[530px] lg:w-1/2"
         >
           {/* Poster layer (background) */}
           {item.image && (
@@ -242,8 +257,7 @@ export default function CourseCard({
                   }
                 }}
                 referrerPolicy="no-referrer-when-downgrade"
-                className="absolute border-0 pointer-events-none"
-                style={{ width: "160%", height: "160%", left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
+                className="pointer-events-none absolute top-1/2 left-1/2 h-[220%] w-[220%] -translate-x-1/2 -translate-y-1/2 border-0 md:h-[170%] md:w-[170%] lg:h-[160%] lg:w-[160%]"
               />
             </div>
           )}

@@ -33,6 +33,7 @@ export default function ContactForm({ dict }: ContactFormProps) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const validate = () => {
     const nextErrors: Record<string, string> = {};
@@ -58,10 +59,30 @@ export default function ContactForm({ dict }: ContactFormProps) {
       return;
     }
 
+    setSubmitError("");
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = (await response.json().catch(() => null)) as { message?: string } | null;
+
+      if (!response.ok) {
+        throw new Error(data?.message ?? "Unable to send your inquiry right now.");
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -75,6 +96,10 @@ export default function ContactForm({ dict }: ContactFormProps) {
         return nextErrors;
       });
     }
+
+    if (submitError) {
+      setSubmitError("");
+    }
   };
 
   const handleInterestChange = (value: string) => {
@@ -86,6 +111,10 @@ export default function ContactForm({ dict }: ContactFormProps) {
         delete nextErrors.interest;
         return nextErrors;
       });
+    }
+
+    if (submitError) {
+      setSubmitError("");
     }
   };
 
@@ -160,6 +189,8 @@ export default function ContactForm({ dict }: ContactFormProps) {
           {errors.message && <p className="ml-2 mt-1 text-xs text-red-500">{errors.message}</p>}
         </div>
       </div>
+
+      {submitError && <p className="text-center text-sm text-red-500">{submitError}</p>}
 
       <Button className="mt-4 w-full py-2" disabled={isSubmitting}>
         {isSubmitting ? dict.submitting : dict.submit}
