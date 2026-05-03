@@ -29,7 +29,7 @@ const contactPage = {
     description:
       "Exploring our courses, seeking guidance, or interested in enrolling? We'd love to hear from you and help you get started.",
     phone: "+92 333 5115133",
-    email: "admissions@futuretech.com",
+    email: "futuretechskillshub@gmail.com",
     address: "Islamabad, Pakistan",
   },
   form: {
