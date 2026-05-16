@@ -32,52 +32,8 @@ const programs = {
       "From aspiring creatives to technical professionals, our programs help shape future-ready experts who can deliver real impact across digital industries and modern development.",
   },
   items: [
-    {
-      id: "graphic-design",
-      tag: "FOR CREATIVE AND ASPIRING ARTISTS",
-      title: "Graphic Designing",
-      description:
-        "Master the art of visual storytelling through our comprehensive graphic design course. We combine creative theory with technical mastery of industry tools to help you create compelling branding and digital assets.",
-      features: [
-        "Expert UI/UX design training",
-        "Adobe Creative Suite mastery",
-        "Brand identity development",
-        "Portfolio building sessions",
-      ],
-      meta: [
-        { label: "Duration:", value: "6 months | Practical" },
-        { label: "Outcome:", value: "Professional Portfolio + Certificate" },
-      ],
-      action: "Apply now",
-      link: "/contact",
-      courseContentPdf: "/course-content/graphic-design-course-content.pdf",
-      image: "/images/graphicdesigner1.jpg",
-      videoSrc: "https://player.vimeo.com/video/1173578653?badge=0&autopause=0&player_id=0&app_id=58479&background=1&autoplay=1&loop=1&muted=1&playsinline=1&byline=0&title=0&portrait=0",
-      theme: "white",
-    },
-    {
-      id: "basic-computer",
-      tag: "FOR BEGINNERS AND OFFICE PROFESSIONALS",
-      title: "Basic Computer",
-      description:
-        "Build a strong foundation in digital literacy with our essential computer skills program. Master core productivity software, operating systems, and internet safety to gain confidence in using modern business technology.",
-      features: [
-        "Microsoft Office Suite proficiency",
-        "Operating system fundamentals",
-        "Internet safety and etiquette",
-        "Typing speed and data entry",
-      ],
-      meta: [
-        { label: "Duration:", value: "3 months | Intensive" },
-        { label: "Outcome:", value: "Digital Literacy Certification" },
-      ],
-      action: "Apply now",
-      link: "/contact",
-      courseContentPdf: "/course-content/basic-computer-course-content.pdf",
-      image: "/images/basiccomputer.jpg",
-      videoSrc: "https://player.vimeo.com/video/1173693745?badge=0&autopause=0&player_id=0&app_id=58479&background=1&autoplay=1&loop=1&muted=1&playsinline=1&byline=0&title=0&portrait=0",
-      theme: "white",
-    },
+    
+   
     {
       id: "web-development",
       tag: "FOR ASPIRING TECH PROFESSIONALS",
@@ -95,12 +51,60 @@ const programs = {
         { label: "Outcome:", value: "Full-Stack Developer Certification" },
       ],
       action: "Apply now",
-      link: "/contact",
-      courseContentPdf: "/course-content/web-development-course-content.pdf",
+      link: "https://forms.gle/WPncqP4BH1zfgyaBA",
+      courseContentPdf: "/course-content/webdevelopmentpdf.pdf",
       image: "/images/webdeveloper1.jpg",
-      videoSrc: "https://player.vimeo.com/video/1173578563?background=1&autoplay=1&loop=1&muted=1&playsinline=1&byline=0&title=0&portrait=0",
+      videoSrc: "https://player.vimeo.com/video/1192794355?quality=1080p&autoplay=1&muted=1&background=1&loop=1&controls=0&badge=0&autopause=0&player_id=0&app_id=58479",
       theme: "green",
     },
+
+{
+      id: "graphic-design",
+      tag: "FOR CREATIVE AND ASPIRING ARTISTS",
+      title: "Graphic Designing",
+      description:
+        "Master the art of visual storytelling through our comprehensive graphic design course. We combine creative theory with technical mastery of industry tools to help you create compelling branding and digital assets.",
+      features: [
+        "Expert UI/UX design training",
+        "Adobe Creative Suite mastery",
+        "Brand identity development",
+        "Portfolio building sessions",
+      ],
+      meta: [
+        { label: "Duration:", value: "6 months | Practical" },
+        { label: "Outcome:", value: "Professional Portfolio + Certificate" },
+      ],
+      action: "Apply now",
+      link: "https://forms.gle/WPncqP4BH1zfgyaBA",
+      courseContentPdf: "/course-content/graphic-design-course-content.pdf",
+      image: "/images/graphicdesigner1.jpg",
+      videoSrc: "https://player.vimeo.com/video/1192797266?quality=1080p&autoplay=1&muted=1&background=1&loop=1&controls=0&badge=0&autopause=0&player_id=0&app_id=58479",
+      theme: "white",
+    },
+     {
+      id: "basic-computer",
+      tag: "FOR BEGINNERS AND OFFICE PROFESSIONALS",
+      title: "Basic Computer",
+      description:
+        "Build a strong foundation in digital literacy with our essential computer skills program. Master core productivity software, operating systems, and internet safety to gain confidence in using modern business technology.",
+      features: [
+        "Microsoft Office Suite proficiency",
+        "Operating system fundamentals",
+        "Internet safety and etiquette",
+        "Typing speed and data entry",
+      ],
+      meta: [
+        { label: "Duration:", value: "3 months | Intensive" },
+        { label: "Outcome:", value: "Digital Literacy Certification" },
+      ],
+      action: "Apply now",
+      link: "https://forms.gle/WPncqP4BH1zfgyaBA",
+      courseContentPdf: "/course-content/basic-computer-course-content.pdf",
+      image: "/images/basiccomputer.jpg",
+      videoSrc: "https://player.vimeo.com/video/1192797003?quality=1080p&autoplay=1&muted=1&background=1&loop=1&controls=0&badge=0&autopause=0&player_id=0&app_id=58479",
+      theme: "white",
+    },
+
   ] satisfies CourseItem[],
   contact: {
     titleLine1: "Unsure which Course ",
